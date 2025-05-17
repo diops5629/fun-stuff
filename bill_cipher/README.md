@@ -8,7 +8,7 @@ Space corresponds to 26,
 Works like this:
 
 Convert message to ternary, then do the "xor" on it between message and key.
-If the message and key are both the same character, then output the same character
+If the message and key are both the same character, then output the same character.
 If the message and key are different, use the excluded characters.
 Example:
 
