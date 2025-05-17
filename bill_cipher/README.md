@@ -1,6 +1,6 @@
 ### Three's a Crowd
 I thought that XOR ciphers were kind of fun, so why not try the same thing with ternary instead of binary?
-Works on the same principles, probably has a butt-ton of vulnerabilities, but hey, this is for fun. Honestly, this probably has the same vunerabilities as a XOR cipher. Also, yes, this implementation is inefficient and messy as heck. There's no comments in my implementation, so if you want me to comment on it, please send me a message, otherwise I'm going to forget.
+Works on the same principles, probably has a butt-ton of vulnerabilities, but hey, this is for fun. Also, yes, this implementation is inefficient and messy as heck. There's no comments in my implementation, so if you want me to comment on it, please send me a message, otherwise I'm going to forget.
 
 How it works:
 A-Z correspond to 0-25,
