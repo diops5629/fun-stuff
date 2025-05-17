@@ -1,4 +1,4 @@
-message = "put either the encrypted or decrypted message here whatever you like"
+message = "this is a message put both the encrypted and decrypted message in here to figure it out"
 key = "wouldnt you like to know"
 
 def convert_to_number(msg):
@@ -52,17 +52,17 @@ def encode(msg, k):
             if msg[i][j] == '0' and k[i%len(k)][j] == '0':
                 new_token += '0'
             elif msg[i][j] == '1' and k[i%len(k)][j] == '1':
-                new_token += '2'
+                new_token += '1'
             elif msg[i][j] == '2' and k[i%len(k)][j] == '2':
-                new_token += '1'
+                new_token += '2'
             elif msg[i][j] == '0' and k[i%len(k)][j] == '1':
-                new_token += '1'
+                new_token += '2'
             elif msg[i][j] == '1' and k[i%len(k)][j] == '0':
-                new_token += '1'
+                new_token += '2'
             elif msg[i][j] == '0' and k[i%len(k)][j] == '2':
-                new_token += '2'
+                new_token += '1'
             elif msg[i][j] == '2' and k[i%len(k)][j] == '0':
-                new_token += '2'
+                new_token += '1'
             elif msg[i][j] == '1' and k[i%len(k)][j] == '2':
                 new_token += '0'
             elif msg[i][j] == '2' and k[i%len(k)][j] == '1':
@@ -71,35 +71,6 @@ def encode(msg, k):
                 print("ERROR")
         new_message.append(new_token)
     return new_message
-
-def decode(msg, k):
-    new_message = []
-    for i in range(len(msg)):
-        new_token = ""
-        for j in range(3):
-            if msg[i][j] == '0' and k[i%len(k)][j] == '0':
-                new_token += '0'
-            elif msg[i][j] == '1' and k[i%len(k)][j] == '1':
-                new_token += '0'
-            elif msg[i][j] == '2' and k[i%len(k)][j] == '2':
-                new_token += '0'
-            elif msg[i][j] == '0' and k[i%len(k)][j] == '1':
-                new_token += '2'
-            elif msg[i][j] == '1' and k[i%len(k)][j] == '0':
-                new_token += '1'
-            elif msg[i][j] == '0' and k[i%len(k)][j] == '2':
-                new_token += '1'
-            elif msg[i][j] == '2' and k[i%len(k)][j] == '0':
-                new_token += '2'
-            elif msg[i][j] == '1' and k[i%len(k)][j] == '2':
-                new_token += '2'
-            elif msg[i][j] == '2' and k[i%len(k)][j] == '1':
-                new_token += '1'
-            else:
-                print("ERROR")
-        new_message.append(new_token)
-    return new_message
-
 def convert_to_words(msg):
     output = ""
     for i in msg:
@@ -122,10 +93,5 @@ encoded_msg = encode(converted, new_key)
 encoded_msg = change_type(encoded_msg, False)
 encoded_msg = convert_to_ten(encoded_msg)
 encoded_msg = convert_to_words(encoded_msg)
-print(encoded_msg)
 
-decoded_msg = decode(converted, new_key)
-decoded_msg = change_type(decoded_msg, False)
-decoded_msg = convert_to_ten(decoded_msg)
-decoded_msg = convert_to_words(decoded_msg)
-print(decoded_msg)
+print(encoded_msg)

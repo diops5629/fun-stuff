@@ -7,28 +7,22 @@ A-Z correspond to 0-25,
 Space corresponds to 26,
 Works like this:
 
-Convert to base 3, then add the characters together. The output is the digit in the 'ones' place.
-
+Convert message to ternary, then do the "xor" on it between message and key.
+If the message and key are both the same character, then output the same character
+If the message and key are different, use the excluded characters.
 Example:
 
 Message = "E", Key = "C"
 Convert to ternary
 Message = 011, Key = 002
 XOR Operation
-1st character: M = 0, K = 0, Output = 0+0=0
-2nd character: M = 1, K = 0, Output = 1+0=1
-3rd character: M = 1, K = 2, Output = 1+2=10=0
+1st character: M = 0, K = 0, Output = 0
+2nd character: M = 1, K = 0, Output = Excluded character = 2
+3rd character: M = 1, K = 2, Output = 0
 
-Encrypted Message = 010
+Encrypted Message = 020
 Convert back to character,
-Encrypted message is "D"
-
-To decrypt
-1st character: M = 0, K = 0, Output = 0-0=0
-2nd character: M = 1, K = 0, Output = 1-0=1
-3rd character: M = 0, K = 2, Output = 10-2=1
-
-Negatives aren't used in decryption, so assume it works like an overflow. 0-1 -> 10-1 = 2
+Encrypted message is "G"
 
 The implementation only takes lowercase. 
 
